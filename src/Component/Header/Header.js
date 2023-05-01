@@ -6,17 +6,22 @@ import { FaUserTie } from "react-icons/fa";
 
 const Header = () => {
   return (
-    <nav class="flex justify-between items-center bg-header bg-no-repeat bg-cover h-[57px]">
+    <nav className="flex justify-between items-center bg-header bg-no-repeat bg-cover h-[57px]">
       <img className="w-48 h-12" src={logo} alt="logo" />
-      <h1 class="text-xl text-white font-bold underline underline-offset-4">
+      <h1 className="text-xl text-white font-bold underline underline-offset-4">
         Go to Marketpage
       </h1>
-      <div class="flex items-center">
-        <div class="flex border-2 rounded">
-          <input type="text" class="px-4 py-2 w-[411px] h-[29px]" />
-          <button class="flex items-center justify-center px-4 bg-white">
+      <div className="flex items-center">
+        {/* Search Input Start*/}
+        <div className="relative text-gray-800">
+          <input
+            type="search"
+            name="search"
+            className="bg-white w-[411px] h-[29px] rounded-md text-sm focus:outline-none"
+          />
+          <button className="absolute right-0 top-0 mt-1 mr-2">
             <svg
-              class="w-6 h-6 text-gray-600"
+              className="w-6 h-6 text-gray-600"
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -25,9 +30,10 @@ const Header = () => {
             </svg>
           </button>
         </div>
-        <ul class="flex items-center space-x-6 mx-5">
+        {/* Search Input End */}
+        <ul className="flex items-center space-x-6 mx-5">
           <li
-            class="font-semibold flex items-center justify-center text-white bg-black h-[40px] 
+            className="font-semibold flex items-center justify-center text-white bg-black h-[40px] 
           p-2 mt-[6px] text-center rounded-md"
           >
             <IoMdNotificationsOutline
@@ -41,7 +47,7 @@ const Header = () => {
             </span>
           </li>
           <li
-            class="font-semibold flex items-center justify-center text-white bg-black h-[40px] 
+            className="font-semibold flex items-center justify-center text-white bg-black h-[40px] 
           p-2 mt-[6px] text-center rounded-md"
           >
             <BsCart3 className="text-center" size={25}></BsCart3>
@@ -52,7 +58,7 @@ const Header = () => {
             </span>
           </li>
           <li
-            class="font-semibold flex items-center justify-center text-black bg-white h-[40px] 
+            className="font-semibold flex items-center justify-center text-black bg-white h-[40px] 
           p-2 mt-[6px] text-center rounded-md"
           >
             <FaUserTie className="text-center" size={25}></FaUserTie>
