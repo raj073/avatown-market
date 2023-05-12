@@ -15,7 +15,7 @@ const Sidebar = () => {
         <div className="space-y-1">
           <h2 className="text-xs font-bold">Contents</h2>
           <div className="flex flex-col font-medium text-xs space-y-1 ps-3">
-            <div>
+            <div className="flex items-center">
               <input
                 type="checkbox"
                 className="border-gray-[#6A6A6A] rounded-sm h-3 w-3"
@@ -23,8 +23,9 @@ const Sidebar = () => {
               <Link to="/" className="ps-[6px]">
                 VRChat(Quest)
               </Link>
+              <div className="bg-[#75DE73] w-[12px] h-[12px] rounded-full ml-[6px]"></div>
             </div>
-            <div>
+            <div className="flex items-center">
               <input
                 type="checkbox"
                 className="border-gray-[#6A6A6A] rounded-sm h-3 w-3"
@@ -32,6 +33,7 @@ const Sidebar = () => {
               <Link to="/" className="ps-[6px]">
                 VRChat(PCVR)
               </Link>
+              <div className="bg-[#3CD4F5] w-[12px] h-[12px] rounded-full ml-2"></div>
             </div>
             <div>
               <input

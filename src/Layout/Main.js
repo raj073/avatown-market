@@ -12,23 +12,23 @@ const Main = () => {
       <Outlet></Outlet>
       <Footer></Footer> */}
 
-      <div class="flex">
-        <div class="flex-1 flex flex-col">
+      <div className="flex">
+        <div className="flex-1 flex flex-col">
           <header>
             <Header></Header>
           </header>
-          <div class="flex">
-            <nav class="flex w-64 h-[775px]">
-              <div class="w-full flex mx-auto">
-                <div class="">
+          <div className="flex">
+            <nav className="flex w-64 h-[775px]">
+              <div className="w-full flex mx-auto">
+                <div className="">
                   <Sidebar></Sidebar>
                 </div>
               </div>
             </nav>
-            <main class="flex flex-col w-full bg-white overflow-x-hidden overflow-y-auto mb-14">
-              <div class="flex w-full mx-auto px-6 py-6">
-                <div class="flex flex-col w-full h-full text-gray-900">
-                  <div class="w-full mx-auto">
+            <main className="flex flex-col w-full bg-white overflow-x-hidden overflow-y-auto mb-14">
+              <div className="flex w-full mx-auto px-6 py-6">
+                <div className="flex flex-col w-full h-full text-gray-900">
+                  <div className="w-full mx-auto">
                     <Outlet></Outlet>
                   </div>
                 </div>
