@@ -35,7 +35,7 @@ const AvatarDetails = () => {
   }
 
   return (
-    <div className="">
+    <div className="w-3/5 md:w-full">
       <div className="flex justify-between border-b-2 mb-5 mt-3">
         <h1 className="font-semibold text-2xl pb-3">Avatar Details View</h1>
       </div>
@@ -47,7 +47,7 @@ const AvatarDetails = () => {
        md:w-1/3 w-1/2 h-1/2 md:rounded-l-lg md:rounded-tl-lg"
         />
 
-        <div className="p-6 md:w-2/3 w-1/2 h-1/2">
+        <div className="px-6 md:w-2/3 w-1/2 h-1/2">
           <h2 className="mb-5 font-bold text:lg md:text-2xl hover:text-blue-500">
             {title}
           </h2>
