@@ -12,3 +12,4 @@ React Pagination: https://www.npmjs.com/package/react-paginate
    2. Another page is avatar details
 5. For icons purpose we use React icons
 6. We use React pagination for multiple page in aa integrated page which cited above.
+7. We use poppins font for all.
