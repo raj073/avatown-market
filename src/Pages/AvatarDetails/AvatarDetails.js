@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import avatarJson from "../../AvatarJson/avatar.json";
-import { FaCartPlus } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
 import { VscHeart } from "react-icons/vsc";
-import { IoDownloadOutline } from "react-icons/io5";
+import { CartContext } from "../../Contexts/CartContext/CartContext";
+import { AvatarContext } from "../../Contexts/AvatarContext";
 
 const AvatarDetails = () => {
   const { id } = useParams();
+  const { addToCart } = useContext(CartContext);
+  const { avatar } = useContext(AvatarContext);
 
   //get the single avatar based on the avatar id
   const singleAvatar = avatarJson.find((item) => {
@@ -21,7 +23,7 @@ const AvatarDetails = () => {
   //if product not found
   if (!singleAvatar) {
     return (
-      <section>
+      <section className="font-primary">
         <div className="flex justify-center items-center h-screen">
           <div className="flex flex-col items-center justify-center ">
             <div className="w-16 h-16 border-b-2 border-gray-900 rounded-full animate-spin"></div>
@@ -35,16 +37,16 @@ const AvatarDetails = () => {
   }
 
   return (
-    <div className="w-3/5 md:w-full">
+    <div className="w-4/5 md:w-full font-primary">
       <div className="flex justify-between border-b-2 mb-5 mt-3">
         <h1 className="font-semibold text-2xl pb-3">Avatar Details View</h1>
       </div>
       <div className="rounded-lg shadow-md md:flex">
         <img
           src={image}
-          alt="Boat"
+          alt="img"
           className="rounded-t-lg 
-       md:w-1/3 w-1/2 h-1/2 md:rounded-l-lg md:rounded-tl-lg"
+       md:w-1/3 w-full h-1/2 md:rounded-l-lg md:rounded-tl-lg"
         />
 
         <div className="px-6 md:w-2/3 w-1/2 h-1/2">
@@ -111,6 +113,7 @@ const AvatarDetails = () => {
             </div>
             <div>
               <button
+                onClick={() => addToCart(avatar, id)}
                 className="bg-indigo-500 hover:bg-indigo-600 text-white md:font-bold text-xs md:text-base 
               py-2 px-4 border-b-4 border-indigo-700 hover:border-indigo-500 rounded ml-12 md:m-auto"
               >

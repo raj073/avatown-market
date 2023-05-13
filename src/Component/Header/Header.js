@@ -4,10 +4,13 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 import { BsCart3 } from "react-icons/bs";
 import { FaUserTie } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../Contexts/CartContext/CartContext";
 
 const Header = () => {
+  const { itemAmount } = useContext(CartContext);
   return (
-    <nav className="flex justify-between items-center bg-header bg-no-repeat bg-cover h-[57px]">
+    <nav className="flex justify-between items-center bg-header bg-no-repeat bg-cover h-[57px] font-primary">
       <Link to={"/"}>
         <img className="w-48 h-12" src={logo} alt="logo" />
       </Link>
@@ -56,7 +59,7 @@ const Header = () => {
             <BsCart3 className="text-center" size={25}></BsCart3>
             <span className="-mr-[18px] -mt-10">
               <div className="inline-flex items-center px-[7px] py-0.5 rounded-full text-xs font-semibold leading-4 bg-red-500 text-white font-primary">
-                1
+                {itemAmount}
               </div>
             </span>
           </li>

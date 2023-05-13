@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaCartPlus } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
 import { VscHeart } from "react-icons/vsc";
 import { IoDownloadOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../Contexts/CartContext/CartContext";
+import { AvatarContext } from "../../Contexts/AvatarContext";
 
 const Avatar = ({ item }) => {
+  const { addToCart } = useContext(CartContext);
+  const { avatar } = useContext(AvatarContext);
   //Destructuring Product
   const { id, title, price, rating, avatarName, pc, image, description } = item;
   return (
@@ -63,12 +67,15 @@ const Avatar = ({ item }) => {
               </h1>
               <IoDownloadOutline className="text-xl text-[#6A6A6A]"></IoDownloadOutline>
             </div>
-            <div className="absolute flex justify-center items-center top-2 right-2 w-[52px] h-6 bg-blue-600 rounded-lg cursor-pointer">
+            <button
+              onClick={() => addToCart(avatar, id)}
+              className="absolute flex justify-center items-center top-2 right-2 w-[52px] h-6 bg-blue-600 rounded-lg cursor-pointer"
+            >
               <FaCartPlus className="text-white ps-1"></FaCartPlus>
               <span className="text-xs text-center text-white ps-1 pr-1 font-medium">
                 Add
               </span>
-            </div>
+            </button>
           </div>
         </div>
       </div>

@@ -3,11 +3,10 @@ import { useContext } from "react";
 import { AvatarContext } from "../../Contexts/AvatarContext";
 import Avatar from "../Avatar/Avatar";
 import ReactPaginate from "react-paginate";
-import avatarJson from "../../AvatarJson/avatar.json";
 
 const Home = () => {
   const { avatar } = useContext(AvatarContext);
-  const items = avatarJson;
+  const items = avatar;
   function Items({ currentItems }) {
     return (
       <>
@@ -29,7 +28,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className="font-primary">
       <div className="flex justify-between">
         <h1 className="text-[22px] font-medium">All Items</h1>
         <select className="border-[#6A6A6A] border-[1px] rounded-[3px] w-[124px] h-[21px] text-xs font-medium">
@@ -48,7 +47,7 @@ const Home = () => {
       >
         <Items currentItems={currentItems} />
         <ReactPaginate
-          className="flex justify-center items-center p-5 text-2xl font-medium gap-4 ps-[440px]"
+          className="flex justify-center items-center p-5 text-2xl font-medium gap-4 ps-[440px] font-primary"
           breakLabel="..."
           nextLabel=">"
           onPageChange={handlePageClick}
