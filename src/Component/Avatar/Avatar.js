@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const Avatar = ({ item }) => {
   //Destructuring Product
-  const { id, title, price, rating, avatar, pc, image, description } = item;
+  const { id, title, price, rating, avatarName, pc, image, description } = item;
   return (
     <div className="flex justify-center items-center">
       <div className="container flex justify-center">
@@ -46,7 +46,7 @@ const Avatar = ({ item }) => {
                 alt="avatar"
               />
               <h1 className="text-[#6A6A6A] text-[10px] font-medium ps-2">
-                {avatar}
+                {avatarName}
               </h1>
             </div>
             <div>

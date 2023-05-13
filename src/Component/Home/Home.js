@@ -3,10 +3,11 @@ import { useContext } from "react";
 import { AvatarContext } from "../../Contexts/AvatarContext";
 import Avatar from "../Avatar/Avatar";
 import ReactPaginate from "react-paginate";
+import avatarJson from "../../AvatarJson/avatar.json";
 
 const Home = () => {
   const { avatar } = useContext(AvatarContext);
-  const items = avatar;
+  const items = avatarJson;
   function Items({ currentItems }) {
     return (
       <>
@@ -20,7 +21,6 @@ const Home = () => {
 
   const [itemOffset, setItemOffset] = useState(0);
   const endOffset = itemOffset + 12;
-  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
   const currentItems = items.slice(itemOffset, endOffset);
   const pageCount = Math.ceil(items.length / 12);
   const handlePageClick = (event) => {

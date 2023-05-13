@@ -3,17 +3,20 @@ import logo from "../../image/logo.png";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { BsCart3 } from "react-icons/bs";
 import { FaUserTie } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <nav className="flex justify-between items-center bg-header bg-no-repeat bg-cover h-[57px]">
-      <img className="w-48 h-12" src={logo} alt="logo" />
-      <h1 className="text-xl text-white font-bold underline underline-offset-4">
+      <Link to={"/"}>
+        <img className="w-48 h-12" src={logo} alt="logo" />
+      </Link>
+      <h1 className="text-xl text-white font-bold underline underline-offset-4 hidden md:block lg:block">
         Go to Marketpage
       </h1>
       <div className="flex items-center">
         {/* Search Input Start*/}
-        <div className="relative text-gray-800">
+        <div className="relative text-gray-800 hidden md:block lg:block">
           <input
             type="search"
             name="search"
